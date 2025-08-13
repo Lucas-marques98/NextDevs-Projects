@@ -1,42 +1,14 @@
-import { useState } from "react";
-import { Button } from "./components/ui/button"
+import {Users2} from 'lucide-react'
+import UserItem from './components/userItem';
 
-/**
- * Componente principal da aplicação que demonstra gerenciamento de estado e manipulação de eventos.
- * @component
- * @returns {JSX.Element} O componente App renderizado
- */
+function App (){
+  return(
+    <div className="flex flex-col">
+      <div className="flex items-center justify-center space-x-3 py-12"></div>
+      <h1 className="text-2xl font-bold">Lista de usuarios</h1>
+      <Users2 className="size-6 text-blue-500"/>
 
-/**
- * @state message - Variável de estado para armazenar e atualizar o texto exibido
- * @function setMessage - Função atualizadora de estado para modificar o valor da mensagem
- */
-
-/**
- * Altera o estado da mensagem quando o botão é clicado
- * @function alterarMensagem
- * @returns {void}
- */
-
-/**
- * Renderiza um container centralizado com:
- * - Um título exibindo a mensagem atual
- * - Um botão que aciona a mudança de mensagem quando clicado
- * Usa classes do Tailwind CSS para estilização e layout
- */
-
-const App = () => {
-  const [message,setMessage] = useState("Olá mundo")
-
-  function alterarMensagem() {
-    setMessage("Fui clicado")
-  }
-  return (
-    <div className="flex justify-center items-center h-screen flex-col space-y-2">
-      <h2>{message}</h2>
-      <Button onClick={() => alterarMensagem()}>
-        Alterar mensagem
-      </Button>
+      <UserItem/>
     </div>
   )
 }
